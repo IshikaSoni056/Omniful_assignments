@@ -1,16 +1,31 @@
-<!-- Render props pattern -->
-The Render Props pattern is a technique in React for sharing code between components using a prop whose value is a function. This function then returns a React element. The "render prop" itself is not necessarily named render; it can be any prop that holds a function that returns JSX.
+#  Render Props Pattern in React
 
-<!-- A render prop is a function prop that a component uses to know what to render. -->
+The **Render Props** pattern is a **technique in React** for sharing code and behavior between components using a prop whose **value is a function**. This function is called by the component and returns a React element.
 
-The Render Props pattern is a technique for sharing code/logic between React components using a function as a child.
+>  The term "render prop" refers to a **function prop that tells a component what to render** — the prop doesn’t have to be named `render`, though that’s a common convention.
 
+---
 
-Common Examples and Use Cases
+##  Why Use Render Props?
 
-<!-- Mouse Position Tracker: -->
+This pattern is especially useful when you want to:
+- Share logic across multiple components
+- Keep components **flexible** and **reusable**
+- Avoid duplicating logic like mouse tracking, fetching data, toggling, etc.
 
-<!-- class MouseTracker extends React.Component {
+---
+
+## Key Concept
+
+```js
+<Component render={functionToRenderSomething} />
+```
+## mouseTracker
+```js
+
+import React from 'react';
+
+class MouseTracker extends React.Component {
   state = { x: 0, y: 0 };
 
   handleMouseMove = (event) => {
@@ -23,16 +38,11 @@ Common Examples and Use Cases
   render() {
     return (
       <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
-        {/* The render prop will receive the mouse coordinates */}
+        {/* Pass mouse coordinates to render function */}
         {this.props.render(this.state)}
       </div>
     );
   }
-} -->
+}
 
-<!-- // Usage:
-const App = () => (
-  <MouseTracker render={({ x, y }) => (
-    <h1>The mouse position is ({x}, {y})</h1>
-  )} />
-); -->
+export default MouseTracker;
