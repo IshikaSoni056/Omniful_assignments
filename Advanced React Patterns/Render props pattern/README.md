@@ -10,7 +10,7 @@ Common Examples and Use Cases
 
 <!-- Mouse Position Tracker: -->
 
-class MouseTracker extends React.Component {
+<!-- class MouseTracker extends React.Component {
   state = { x: 0, y: 0 };
 
   handleMouseMove = (event) => {
@@ -28,11 +28,11 @@ class MouseTracker extends React.Component {
       </div>
     );
   }
-}
+} -->
 
-// Usage:
+<!-- // Usage:
 const App = () => (
   <MouseTracker render={({ x, y }) => (
     <h1>The mouse position is ({x}, {y})</h1>
   )} />
-);
+); -->
