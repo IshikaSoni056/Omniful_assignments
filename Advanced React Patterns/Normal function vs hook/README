@@ -1,0 +1,21 @@
+<!-- 1. Normal Function -->
+  A normal function is just a plain JavaScript function. You can use it anywhere — to do calculations, handle events, or return UI in functional components.
+
+<!-- 2. Hook -->
+  A hook is a special function provided by React (or custom-defined) that lets you tap into React features like state, lifecycle, or context inside functional components.
+
+  Hooks must:
+   Always start with the word use (e.g., useState, useEffect)
+  Be called only inside React functional components or other hooks
+
+  import { useState } from "react";
+
+<!-- function Counter() {
+  const [count, setCount] = useState(0); // useState is a hook
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+} -->
